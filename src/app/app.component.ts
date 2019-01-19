@@ -19,4 +19,12 @@ export class AppComponent {
   decrementar(){
     this.contador--;
   }
+
+  cambioContador(evt){
+    this.contador = evt;
+  }
+
+  resetContador(){
+    this.contador = 0;
+  }
 }

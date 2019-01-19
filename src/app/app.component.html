@@ -7,7 +7,23 @@
 
 <div class="row text-center">
   <div class="col">
-    <button class="btn btn-primary mr-1" (click)="incrementar()">Incrementar</button>
-    <button class="btn btn-info mr-1" (click)="decrementar()">Decrementar</button>
+    <button class="btn btn-info mr-1" (click)="decrementar()">
+      Decrementar
+    </button>
+    <button class="btn btn-primary mr-1" (click)="incrementar()">
+      Incrementar
+    </button>
   </div>
 </div>
+
+<hr />
+
+<div class="row text-center">
+  <div class="col">
+    <app-hijo
+      [contador]="contador"
+      (cambioContador)="cambioContador($event)"
+    ></app-hijo>
+  </div>
+</div>
+
