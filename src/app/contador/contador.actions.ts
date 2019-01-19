@@ -4,6 +4,7 @@ export const INCREMENTAR = '[Contador] INCREMENTAR';
 export const DECREMENTAR = '[Contador] DECREMENTAR';
 export const MULTIPLICAR = '[Contador] MULTIPLICAR';
 export const DIVIDIR = '[Contador] DIVIDIR';
+export const RESETEAR = '[Contador] RESET';
 
 //son clases, no funciones. La forma de dispararlas será creandoles un new.
 export class IncrementarAction implements Action{
@@ -24,5 +25,9 @@ export class DividirAction implements Action{
   constructor(public payload:number){}
 }
 
+export class ResetearAction implements Action{
+  readonly type = RESETEAR;
+}
 
-export type Actions = IncrementarAction | DecrementarAction |MultiplicarAction | DividirAction;
+
+export type Actions = IncrementarAction | DecrementarAction |MultiplicarAction | DividirAction | ResetearAction;
