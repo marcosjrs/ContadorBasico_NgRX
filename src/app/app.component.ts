@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+//El esquema del estado de toda la aplicación. (Se podría haber utilizado en app.module cuando se añadía..)
+export interface AppState{
+  contador: number;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,23 +14,26 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   contador:number;
-  constructor(){
-    this.contador = 10;
+
+  constructor(private store:Store<AppState>){ //Indicamos que el store principal tiene la estructura de la interface AppState
+    this.store.subscribe(
+      state=> this.contador = state.contador
+    )
   }
 
   incrementar(){
-    this.contador++;
+    this.store.dispatch({type:"INCREMENTAR"});
   }
 
   decrementar(){
-    this.contador--;
+    this.store.dispatch({type:"DECREMENTAR"});
   }
 
   cambioContador(evt){
-    this.contador = evt;
+
   }
 
   resetContador(){
-    this.contador = 0;
+
   }
 }

@@ -18,7 +18,7 @@ import { contadorReducer } from './contador/contador.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({count:contadorReducer})// {count:contadorReducer} es el State Principal de toda la aplicación (es toda la estructura de datos)
+    StoreModule.forRoot({contador:contadorReducer})// {contador:contadorReducer} es el State Principal de toda la aplicación (es toda la estructura de datos)
   ],
   providers: [],
   bootstrap: [AppComponent]
