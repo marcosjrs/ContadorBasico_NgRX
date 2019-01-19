@@ -20,7 +20,9 @@ export class AppComponent {
 
   constructor(private store: Store<AppState>) {
     //Indicamos que el store principal tiene la estructura de la interface AppState
-    this.store.subscribe(state => (this.contador = state.contador));
+    this.store
+    .select('contador') // seleccionamos solo el valor de contador
+    .subscribe(state => (this.contador = state));
   }
 
   incrementar() {
