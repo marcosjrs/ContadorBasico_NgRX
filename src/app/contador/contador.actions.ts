@@ -2,6 +2,8 @@ import { Action } from '@ngrx/store';
 
 export const INCREMENTAR = '[Contador] INCREMENTAR';
 export const DECREMENTAR = '[Contador] DECREMENTAR';
+export const MULTIPLICAR = '[Contador] MULTIPLICAR';
+export const DIVIDIR = '[Contador] DIVIDIR';
 
 //son clases, no funciones. La forma de dispararlas será creandoles un new.
 export class IncrementarAction implements Action{
@@ -12,3 +14,15 @@ export class DecrementarAction implements Action{
   readonly type = DECREMENTAR;
 }
 
+export class MultiplicarAction implements Action{
+  readonly type = MULTIPLICAR;
+  constructor(public payload:number){ }
+}
+
+export class DividirAction implements Action{
+  readonly type = DIVIDIR;
+  constructor(public payload:number){}
+}
+
+
+export type Actions = IncrementarAction | DecrementarAction |MultiplicarAction | DividirAction;
